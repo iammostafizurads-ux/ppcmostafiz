@@ -1,0 +1,249 @@
+/* ==========================================================================
+   PPC Mostafiz - Custom Design System & Micro-Interactions
+   Theme: Deep Dark Navy (#0b0f19), Electric Blue (#1a73e8), Emerald (#10b981)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0b0f19;
+  --bg-surface: #111827;
+  --bg-card: #131c31;
+  --border-subtle: #1f293d;
+  --border-active: #2e3d5b;
+  --color-google-blue: #1a73e8;
+  --color-google-hover: #1557b0;
+  --color-emerald-growth: #10b981;
+  --color-emerald-hover: #059669;
+  --color-slate-muted: #94a3b8;
+  --color-text-primary: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(26, 115, 232, 0.35);
+  color: #60a5fa;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3d5b;
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(11, 15, 25, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  z-index: 50;
+}
+
+/* Nav Links */
+.nav-link {
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #10b981 !important;
+  background-color: rgba(30, 41, 59, 0.6);
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(26, 115, 232, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(26, 115, 232, 0.15);
+}
+
+.glass-card-interactive {
+  position: relative;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.glass-card-interactive:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 16px 36px -12px rgba(16, 185, 129, 0.12);
+}
+
+/* Background Gradients & Glows */
+.bg-mesh {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(26, 115, 232, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(26, 115, 232, 0.06) 0%, transparent 50%);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(26, 115, 232, 0.3);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.35);
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #ffffff 30%, #60a5fa 70%, #1a73e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Badges & Status */
+.status-pulse {
+  position: relative;
+  display: inline-flex;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  background-color: inherit;
+  animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Buttons with interactive glow */
+.btn-emerald-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+}
+
+.btn-emerald-primary:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55);
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.btn-blue-primary {
+  background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px 0 rgba(26, 115, 232, 0.39);
+}
+
+.btn-blue-primary:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #1a73e8 100%);
+  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.55);
+  transform: translateY(-1px);
+}
+
+/* Range input styling for ROI Calculator */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1f293d;
+  height: 8px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  border: 2px solid #ffffff;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Sub-card comparison grid */
+.metric-badge-negative {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.metric-badge-positive {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* YouTube Button & Red Accent */
+.glow-red {
+  box-shadow: 0 0 35px -5px rgba(239, 68, 68, 0.35);
+}
+
+.btn-youtube {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.39);
+}
+
+.btn-youtube:hover {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.55);
+  transform: translateY(-1px);
+}
+
