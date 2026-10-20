@@ -210,10 +210,10 @@ function initPortfolio() {
   const closeModalBtn = document.getElementById('closeModalBtn');
   const submitBtn = document.getElementById('submitAuditBtn');
 
-  // Telegram Lead Alert Configuration
+  // Telegram Lead Alert Configuration (Disconnected)
   const TELEGRAM_CONFIG = {
-    botToken: '8941219541:AAG22mPeFT1t_TB52-j2mXwhrZiXUAiKDpY',
-    chatId: '5362664324' // Automatically filled via get-chat-id.ps1 or user's Telegram ID
+    botToken: '',
+    chatId: ''
   };
 
   if (auditForm) {
