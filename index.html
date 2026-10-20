@@ -387,7 +387,7 @@
           
           <div class="glass-card p-5 rounded-2xl text-center space-y-1">
             <div class="text-3xl sm:text-4xl font-extrabold text-white counter-value" data-target="500" data-prefix="$" data-suffix="K+">
-              $0
+              $500K+
             </div>
             <p class="text-xs sm:text-sm font-semibold text-slate-300">Ad Spend Managed</p>
             <p class="text-[11px] text-slate-500">Across Google & Meta</p>
@@ -395,7 +395,7 @@
 
           <div class="glass-card p-5 rounded-2xl text-center space-y-1">
             <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 counter-value" data-target="3.5" data-suffix="x+" data-decimals="1">
-              0.0x
+              3.5x+
             </div>
             <p class="text-xs sm:text-sm font-semibold text-slate-300">Average Client ROAS</p>
             <p class="text-[11px] text-slate-500">Focus on qualified revenue</p>
@@ -403,7 +403,7 @@
 
           <div class="glass-card p-5 rounded-2xl text-center space-y-1">
             <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 counter-value" data-target="150" data-suffix="+">
-              0
+              150+
             </div>
             <p class="text-xs sm:text-sm font-semibold text-slate-300">Campaigns Deployed</p>
             <p class="text-[11px] text-slate-500">Local services & B2B niches</p>
@@ -1926,6 +1926,70 @@
   <!-- Lucide Icon Initialization -->
   <script>
     lucide.createIcons();
+  </script>
+
+  <!-- Guaranteed Counter Animation Fallback -->
+  <script>
+    (function() {
+      function runCounters() {
+        var counters = document.querySelectorAll('.counter-value');
+        if (!counters.length) return;
+        var section = document.getElementById('trust-metrics');
+        var started = false;
+
+        function animate() {
+          if (started) return;
+          started = true;
+          counters.forEach(function(el) {
+            var target = parseFloat(el.getAttribute('data-target'));
+            if (isNaN(target)) return;
+            var prefix = el.getAttribute('data-prefix') || '';
+            var suffix = el.getAttribute('data-suffix') || '';
+            var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+            var duration = 1600;
+            var startTime = performance.now();
+
+            function tick(now) {
+              var progress = Math.min((now - startTime) / duration, 1);
+              var ease = 1 - Math.pow(1 - progress, 3);
+              var current = target * ease;
+              el.textContent = prefix + (decimals > 0 ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : target.toLocaleString()) + suffix;
+              }
+            }
+            requestAnimationFrame(tick);
+          });
+        }
+
+        if (section) {
+          var rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            animate();
+          } else if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+              if (entries[0].isIntersecting) {
+                animate();
+                obs.disconnect();
+              }
+            }, { threshold: 0.05 });
+            obs.observe(section);
+          } else {
+            animate();
+          }
+        } else {
+          animate();
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runCounters);
+      } else {
+        runCounters();
+      }
+    })();
   </script>
 </body>
 </html>

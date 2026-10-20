@@ -4,7 +4,7 @@
  * Domain: ppcmostafiz.com
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolio() {
   // 1. Mobile Navigation Toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -57,17 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Animated Counter for Trust Badges
+  // 2. Animated Counter for Trust Badges (Instant + Smooth Viewport Trigger)
   const counters = document.querySelectorAll('.counter-value');
   let countersAnimated = false;
 
   const animateCounters = () => {
+    if (countersAnimated) return;
+    countersAnimated = true;
+
     counters.forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target'));
+      if (isNaN(target)) return;
       const prefix = counter.getAttribute('data-prefix') || '';
       const suffix = counter.getAttribute('data-suffix') || '';
       const decimals = parseInt(counter.getAttribute('data-decimals') || '0', 10);
-      const duration = 1800; // ms
+      const duration = 1600; // ms
       const startTime = performance.now();
 
       const updateCount = (currentTime) => {
@@ -99,17 +103,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const counterSection = document.getElementById('trust-metrics');
-  if (counterSection && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !countersAnimated) {
-          countersAnimated = true;
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
-    observer.observe(counterSection);
+  if (counterSection) {
+    const checkAndAnimate = () => {
+      const rect = counterSection.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        animateCounters();
+      }
+    };
+
+    // Trigger immediately if already in viewport
+    checkAndAnimate();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05 });
+      observer.observe(counterSection);
+    } else {
+      window.addEventListener('scroll', checkAndAnimate, { passive: true });
+    }
   } else {
     animateCounters();
   }
@@ -404,5 +421,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+// Reliable Initialization across all browser loading states
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+  initPortfolio();
+}
+
 
