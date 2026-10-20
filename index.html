@@ -78,23 +78,26 @@
       color: #10b981 !important;
       background-color: rgba(30, 41, 59, 0.6) !important;
     }
-    /* Primary CTA Emerald Buttons */
+    /* Primary CTA Emerald Buttons - Matching Live Screenshot */
     .btn-emerald-primary {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-      background-color: #10b981 !important;
+      background: #00c982 !important;
+      background-color: #00c982 !important;
       color: #ffffff !important;
-      font-weight: 600 !important;
+      font-weight: 700 !important;
       font-size: 0.95rem !important;
+      border-radius: 8px !important;
       transition: all 0.25s ease !important;
-      box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39) !important;
+      box-shadow: 0 0 25px -2px rgba(0, 201, 130, 0.55), 0 4px 16px rgba(0, 201, 130, 0.35) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      text-decoration: none !important;
     }
     .btn-emerald-primary:hover {
-      background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
-      background-color: #059669 !important;
+      background: #00d084 !important;
+      background-color: #00d084 !important;
       color: #ffffff !important;
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55) !important;
-      transform: translateY(-1px);
-      filter: brightness(1.1) !important;
+      box-shadow: 0 0 35px rgba(0, 201, 130, 0.8), 0 6px 22px rgba(0, 201, 130, 0.5) !important;
+      transform: translateY(-1px) !important;
+      filter: brightness(1.08) !important;
     }
     /* Cards & Backgrounds */
     .glass-card {
@@ -197,9 +200,9 @@
 
         <!-- Right CTA & Booking -->
         <div class="hidden md:flex items-center space-x-4">
-          <a href="#contact" class="btn-emerald-primary bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-[0.95rem] px-5 py-2.5 rounded-lg flex items-center space-x-2 shadow-md hover:shadow-emerald-500/30 transition-all hover:brightness-110">
+          <a href="#contact" class="btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold text-[0.95rem] px-5 py-2.5 rounded-lg flex items-center space-x-1.5 shadow-[0_0_25px_rgba(0,201,130,0.55)] hover:shadow-[0_0_35px_rgba(0,201,130,0.8)] transition-all hover:brightness-105 active:scale-95">
             <span>Book a Free Audit</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
           </a>
         </div>
 
@@ -226,9 +229,9 @@
       <a href="#why-me" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Why Me</a>
       <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">FAQ</a>
       <div class="pt-2">
-        <a href="#contact" class="mobile-nav-link w-full btn-emerald-primary bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg flex items-center justify-center space-x-2 text-center text-[0.95rem] shadow-md hover:brightness-110">
+        <a href="#contact" class="mobile-nav-link w-full btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold py-3 rounded-lg flex items-center justify-center space-x-1.5 text-center text-[0.95rem] shadow-[0_0_25px_rgba(0,201,130,0.55)] hover:shadow-[0_0_35px_rgba(0,201,130,0.8)] transition-all hover:brightness-105">
           <span>Book a Free Audit</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
         </a>
       </div>
     </div>
@@ -268,9 +271,9 @@
 
             <!-- Dual CTAs -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="#contact" class="btn-emerald-primary w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold text-[0.95rem] px-6 py-3.5 rounded-lg flex items-center justify-center space-x-2.5 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:brightness-110 group">
+              <a href="#contact" class="btn-emerald-primary w-full sm:w-auto bg-[#00c982] hover:bg-[#00d084] text-white font-bold text-[0.95rem] px-6 py-3.5 rounded-lg flex items-center justify-center space-x-2.5 shadow-[0_0_25px_rgba(0,201,130,0.55)] hover:shadow-[0_0_35px_rgba(0,201,130,0.8)] transition-all hover:brightness-105 active:scale-95 group">
                 <span>Get a Free Google Ads Audit</span>
-                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                <i data-lucide="arrow-right" class="w-5 h-5 stroke-[2.5] group-hover:translate-x-1 transition-transform"></i>
               </a>
 
               <a href="#video-showcase" class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-white border border-[#1f293d] hover:border-slate-600 font-semibold text-[0.95rem] flex items-center justify-center space-x-2 transition-all">
@@ -1742,10 +1745,10 @@
                   <button 
                     type="submit" 
                     id="submitAuditBtn" 
-                    class="w-full btn-emerald-primary bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-[0.95rem] py-4 px-6 rounded-lg flex items-center justify-center space-x-2 text-base shadow-xl transition-all hover:brightness-110"
+                    class="w-full btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold text-[0.95rem] py-4 px-6 rounded-lg flex items-center justify-center space-x-2 text-base shadow-[0_0_25px_rgba(0,201,130,0.55)] hover:shadow-[0_0_35px_rgba(0,201,130,0.8)] transition-all hover:brightness-105 active:scale-95"
                   >
                     <span>Claim Your Free Google Ads Audit</span>
-                    <i data-lucide="arrow-right" class="w-5 h-5 ml-1"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-1 stroke-[2.5]"></i>
                   </button>
                   <p class="text-center text-[11px] text-slate-500 mt-3">
                     🔒 Strictly confidential. No spam, no aggressive sales follow-ups.
