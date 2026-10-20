@@ -204,19 +204,27 @@ function initPortfolio() {
     });
   }
 
-  // 5. Contact / Free Audit Form Submission Simulation
+  // 5. Contact / Free Audit Form Submission connected to Telegram Bot
   const auditForm = document.getElementById('auditForm');
   const formSuccessModal = document.getElementById('formSuccessModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const submitBtn = document.getElementById('submitAuditBtn');
 
+  // Telegram Lead Alert Configuration
+  const TELEGRAM_CONFIG = {
+    botToken: '8941219541:AAG22mPeFT1t_TB52-j2mXwhrZiXUAiKDpY',
+    chatId: '5362664324' // Automatically filled via get-chat-id.ps1 or user's Telegram ID
+  };
+
   if (auditForm) {
-    auditForm.addEventListener('submit', (e) => {
+    auditForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('clientName')?.value.trim();
       const email = document.getElementById('clientEmail')?.value.trim();
       const website = document.getElementById('clientWebsite')?.value.trim();
+      const budget = document.getElementById('clientBudget')?.value || 'Not specified';
+      const message = document.getElementById('clientMessage')?.value.trim() || 'No additional message';
 
       if (!name || !email || !website) {
         alert('Please fill out all required fields (Name, Email, Website).');
@@ -231,12 +239,35 @@ function initPortfolio() {
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
-          Analyzing Request...
+          Submitting Audit Request...
         `;
       }
 
-      // Simulate API submission
-      setTimeout(() => {
+      try {
+        // Dispatch lead directly to Telegram if chatId is configured
+        if (TELEGRAM_CONFIG.botToken && TELEGRAM_CONFIG.chatId) {
+          const leadMessage = 
+            `🚀 *NEW GOOGLE ADS AUDIT LEAD!*\n\n` +
+            `👤 *Name:* ${name}\n` +
+            `📧 *Email:* ${email}\n` +
+            `🌐 *Website:* ${website}\n` +
+            `💰 *Ad Spend:* ${budget}\n` +
+            `💬 *Challenge/Goal:* ${message}\n\n` +
+            `📅 *Submitted:* ${new Date().toLocaleString()}`;
+
+          await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: TELEGRAM_CONFIG.chatId,
+              text: leadMessage,
+              parse_mode: 'Markdown'
+            })
+          });
+        }
+      } catch (err) {
+        console.warn('Telegram notification delivery note:', err);
+      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = `
@@ -256,7 +287,7 @@ function initPortfolio() {
           spendSlider.value = 5000;
           updateCalculator();
         }
-      }, 1200);
+      }
     });
   }
 
