@@ -217,45 +217,44 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center space-x-3 group">
+      <a href="/" class="flex items-center space-x-3 group flex-shrink-0">
         <div class="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-amber-500 via-emerald-400 to-blue-600 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200 flex-shrink-0 overflow-hidden">
           <img src="/images/mostafizur-rahman.png" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='images/mostafizur-rahman.png';}" alt="Mostafizur Rahman" class="w-full h-full object-cover object-top rounded-full bg-[#111827]">
         </div>
         <div class="flex flex-col">
-          <span class="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+          <span class="text-lg font-bold tracking-tight text-white flex items-center gap-1.5 whitespace-nowrap">
             PPC Mostafiz
-            <span class="inline-block px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">TAXI PPC</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           </span>
-          <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Fleet Acquisition Specialist</span>
+          <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider whitespace-nowrap">Performance Marketer</span>
         </div>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
-        <a href="#traps" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">5 Budget Wasters</a>
-        <a href="#system" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">4-Pillar System</a>
-        <a href="#case-studies" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">Fleet Results</a>
-        <a href="#about-consultant" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">Why Me</a>
-        <a href="#calculator" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">ROI Calculator</a>
-        <a href="#audit" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">Free Audit</a>
-        <a href="#faq" class="px-3 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-slate-800/60 transition-colors">FAQ</a>
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+        <a href="#hero" class="px-3.5 py-2 rounded-lg text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors flex items-center space-x-1.5 font-medium whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          <span>Video Intro</span>
+        </a>
+        <a href="#traps" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">Traps</a>
+        <a href="#system" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">System</a>
+        <a href="#case-studies" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">Case Studies</a>
+        <a href="#calculator" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">ROI Calculator</a>
+        <a href="#about-consultant" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">Why Me</a>
+        <a href="#faq" class="nav-link px-3.5 py-2 rounded-lg text-[#e2e8f0] hover:text-[#10b981] hover:bg-slate-800/60 transition-colors font-medium whitespace-nowrap">FAQ</a>
       </nav>
 
-      <!-- Right CTAs -->
-      <div class="hidden sm:flex items-center space-x-3">
-        <a href="https://wa.me/8801700000000?text=Hi%20Mostafiz,%20I'm%20a%20taxi/chauffeur%20fleet%20operator.%20I'd%20like%20to%20discuss%20Google%20Ads%20for%20my%20company." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold text-xs flex items-center space-x-1.5 transition-all">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>WhatsApp</span>
-        </a>
-        <a href="#audit-form" class="btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-lg flex items-center space-x-1.5 shadow-[0_0_25px_rgba(0,201,130,0.55)] transition-all hover:brightness-105 active:scale-95">
-          <span>Claim Free Fleet Audit</span>
+      <!-- Right CTA Button -->
+      <div class="hidden md:flex items-center space-x-4 flex-shrink-0">
+        <a href="#audit-form" class="btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold text-[0.95rem] px-5 py-2.5 rounded-lg flex items-center space-x-1.5 shadow-[0_0_25px_rgba(0,201,130,0.55)] hover:shadow-[0_0_35px_rgba(0,201,130,0.8)] transition-all hover:brightness-105 active:scale-95 whitespace-nowrap">
+          <span>Book a Free Audit</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="flex lg:hidden">
-        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+      <div class="flex md:hidden">
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
           <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
           <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
         </button>
@@ -264,22 +263,25 @@
     </div>
 
     <!-- Mobile Slide-out Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden flex-col px-4 pt-3 pb-6 space-y-2 bg-[#0b0f19]/95 backdrop-blur-xl border-b border-[#1f293d]">
-      <a href="#traps" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">5 Budget Wasters</a>
-      <a href="#system" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">4-Pillar System</a>
-      <a href="#case-studies" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">Fleet Results</a>
-      <a href="#about-consultant" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">Why Me</a>
-      <a href="#calculator" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">ROI Calculator</a>
-      <a href="#audit" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">What's in the Audit</a>
-      <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium">FAQ</a>
+    <div id="mobileMenu" class="hidden md:hidden flex-col px-4 pt-3 pb-6 space-y-2 bg-[#0b0f19]/95 backdrop-blur-xl border-b border-[#1f293d]">
+      <a href="#hero" class="mobile-nav-link px-4 py-3 rounded-lg text-red-300 hover:text-red-200 hover:bg-slate-800 text-base font-medium flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-red-500"></span>
+        <span>Video Intro</span>
+      </a>
+      <a href="#traps" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">5 Budget Wasters</a>
+      <a href="#system" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">4-Pillar System</a>
+      <a href="#case-studies" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Case Studies</a>
+      <a href="#calculator" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">ROI Calculator</a>
+      <a href="#about-consultant" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">Why Me</a>
+      <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 text-base font-medium">FAQ</a>
       <div class="pt-2 flex flex-col gap-2">
-        <a href="#audit-form" class="mobile-nav-link w-full btn-emerald-primary bg-[#00c982] text-white font-bold py-3 rounded-lg flex items-center justify-center space-x-1.5 text-center text-sm shadow-[0_0_25px_rgba(0,201,130,0.55)]">
-          <span>Claim Free Fleet Audit</span>
+        <a href="#audit-form" class="mobile-nav-link w-full btn-emerald-primary bg-[#00c982] hover:bg-[#00d084] text-white font-bold py-3 rounded-lg flex items-center justify-center space-x-1.5 text-center text-[0.95rem] shadow-[0_0_25px_rgba(0,201,130,0.55)]">
+          <span>Book a Free Audit</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
         </a>
         <a href="https://wa.me/8801700000000?text=Hi%20Mostafiz,%20I'm%20a%20taxi/chauffeur%20fleet%20operator." target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-center text-xs font-semibold flex items-center justify-center space-x-1.5">
           <i data-lucide="message-square" class="w-4 h-4"></i>
-          <span>Chat Directly on WhatsApp</span>
+          <span>Chat on WhatsApp Directly</span>
         </a>
       </div>
     </div>
